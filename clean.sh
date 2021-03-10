@@ -1,3 +1,5 @@
+rm bin/main.out
+rm bin/main_oblas.out   
 rm Makefile
 rm Makefile.in
 rm compile
@@ -19,7 +21,13 @@ rm src/__top_builddir__bin_main_out-matrix.o
 rm src/__top_builddir__bin_main_out-matrix_oblas.o
 rm src/__top_builddir__bin_main_oblas_out-matrix_oblas.o
 rm src/__top_builddir__bin_main_oblas_out-main_oblas.o
+rm src/__top_builddir__bin_main_oblas_out-main.o
 rm tests/func_test-test.o
 rm tests/func_test.log
 rm tests/func_test.trs
 rm tests/test-suite.log
+rm tests/func_test
+rm tests/func_test_oblas
+rm tests/func_test_oblas-test.o
+rm tests/func_test_oblas.trs
+rm tests/func_test_oblas.log

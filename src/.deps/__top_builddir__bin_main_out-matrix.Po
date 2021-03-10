@@ -1,0 +1,6 @@
+__top_builddir__bin_main_out-matrix.o: matrix.c \
+ /usr/include/stdc-predef.h ../include/matrix.h
+
+/usr/include/stdc-predef.h:
+
+../include/matrix.h:
