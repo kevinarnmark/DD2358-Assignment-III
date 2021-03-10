@@ -2,7 +2,6 @@
 #include "matrix.h"
 
 void matmul(int n, double* restrict c, const double* restrict a, const double* restrict b) {
-    //const int n = *n_ptr;
     const double alpha = 1.0;
     const double beta = 0.0;
     const int lda = n;
