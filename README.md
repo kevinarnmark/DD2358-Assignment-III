@@ -7,6 +7,7 @@ $ git clone https://github.com/kevinarnmark/DD2358-Assignment-III.git
 ## Dependencies
 * openBLAS (Other BLAS implementations will need slight changes in the code)
 * GTEST
+* C/C++ compiler
 
 Installing the necessary dependencies may differ using other operating systems than Ubuntu. This README will assume the user runs Ubuntu:
 
@@ -23,8 +24,6 @@ $ cmake ..
 $ cd ..
 $ make install
 ```
-
-
 Using the Ubuntu Advanced Packaging tool:
 ```
 $ sudo apt-get install libgtest-dev
