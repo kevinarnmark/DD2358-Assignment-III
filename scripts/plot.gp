@@ -17,7 +17,7 @@ set terminal png
 set autoscale
 set output "bench_result_FLOPS.png"
 set xlabel "N"
-set ylabel "GFLOPS/s"
+set ylabel "GFLOPS"
 set border 3 lw 1
 set title "*Your CPU here*, *Your compilers here*"
 set tics nomirror
