@@ -96,3 +96,8 @@ The following commands are available:
 * test (Runs unittests for both the oblas and naive implementation)
 * benchmark m (Runs the benchmark for matrices up to mxm, saves it in the given volume)
 * plot (Generates the plots from the benchmark data using gnuplot)
+
+Example:
+```
+$ sudo docker run --rm -v `pwd`/data:/dd2358-assignment-3-1.0/data -it dd2358-assignment-3:latest benchmark 500
+```
