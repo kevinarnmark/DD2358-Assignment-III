@@ -15,7 +15,7 @@ Installing GTEST (2 ways):
 Building from git:
 ```
 clone GTEST repository
-$ git clone ...
+$ git clone https://github.com/google/googletest.git
 
 Installing GTEST
 $ mkdir build
@@ -63,16 +63,16 @@ $ ./tests/func_test_oblas # For the openBLAS test
 ```
 
 ## Building and running benchmark
-Building and running the benchmark up to a matrix size of 1000 can be done with:
+Building and running the benchmark up to a matrix size of 500 can be done with:
 ```
 $ mkdir data
 $ make
-$ ./scripts/benchmark.sh 1000
+$ ./scripts/benchmark.sh 500
 ```
 The data is stored in the directory data (2 files, naive and oblas)
 To plot these using gnuplot (install with sudo apt-get install gnuplot) 
 ```
-$ gnuplot plot.gp
+$ gnuplot scripts/plot.gp
 ```
 The resulting graphs are called bench_result_time.png & bench_result_FLOPS.png and can be found in the data directory.
 
