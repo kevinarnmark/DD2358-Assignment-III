@@ -14,9 +14,4 @@ RUN ./configure --prefix=/usr && make && make install && make check
 
 VOLUME /dd2358-assignment-3-1.0/data
 
-#COPY ./docker-entrypoint.sh .
-#COPY ./benchmark.sh .
-#COPY ./bin/run.sh bin
-#COPY ./plot.gp .
-
 ENTRYPOINT ["/dd2358-assignment-3-1.0/scripts/docker-entrypoint.sh"]
