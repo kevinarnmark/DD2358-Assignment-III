@@ -3,12 +3,6 @@ bin_PROGRAMS = $(top_builddir)/bin/main.out $(top_builddir)/bin/main_oblas.out $
 __top_builddir__bin_main_out_SOURCES = main.c matrix.c
 __top_builddir__bin_main_out_CFLAGS = -I$(top_srcdir)/include -Wall -O3
 
-<<<<<<< HEAD
-=======
-__top_builddir__bin_main_oblas_out_SOURCES = main.c matrix_oblas.c
-__top_builddir__bin_main_oblas_out_CFLAGS = -I$(top_srcdir)/include -Wall -O3 -lopenblas
->>>>>>> 98e91a5aacf92e1b01ec2ff4afde8fc4529242e1
-
 __top_builddir__bin_main_oblas_out_SOURCES = main.c matrix_cblas.c
 __top_builddir__bin_main_oblas_out_CFLAGS = -I$(top_srcdir)/include -Wall -O3 -lopenblas
 
