@@ -7,6 +7,7 @@ $ git clone https://github.com/kevinarnmark/DD2358-Assignment-III.git
 ## Dependencies
 * openBLAS (Other BLAS implementations will need slight changes in the code)
 * GTEST
+* LIBXSMM
 * C/C++ compiler
 
 Installing the necessary dependencies may differ using other operating systems than Ubuntu. This README will assume the user runs Ubuntu:
@@ -36,8 +37,19 @@ $ sudo apt-get install libopenblas-dev
 ```
 To only use openblas single threaded, create an env variable:
 ```
-export OPENBLAS_NUM_THREADS=1
+$ export OPENBLAS_NUM_THREADS=1
 ```
+
+Installing LIBXSMM:
+```
+$ git clone https://github.com/hfp/libxsmm.git
+```
+In the LIBXSMM directory:
+```
+$ sudo make STATIC=0
+```
+The resulting libraries are then located in libxsmm/lib. Make sure your system and compiler has access to these files. This could be done by e.g. copying the libraries to where your LD_LIBRARY_PATH is pointing to.
+
 ## Configuring autoconfig/automake
 In the main directory of the repository:
 ```
@@ -60,16 +72,17 @@ or:
 $ make
 $ ./tests/func_test # For the naive test
 $ ./tests/func_test_oblas # For the openBLAS test
+$ ./tests/func_test_libxsmm # For the LIBXSMM test
 ```
 
 ## Building and running benchmark
-Building and running the benchmark up to a matrix size of 500 can be done with:
+Building and running the benchmark up to a matrix size of 500 with a step size of 10 can be done with:
 ```
 $ mkdir data
 $ make
-$ ./scripts/benchmark.sh 500
+$ ./scripts/benchmark.sh 500 10
 ```
-The data is stored in the directory data (2 files, naive and oblas)
+The data is stored in the directory data (3 files, naive_perf.dat, oblas_perf.dat and libxsmm_perf.dat)
 To plot these using gnuplot (install with sudo apt-get install gnuplot) 
 ```
 $ gnuplot scripts/plot.gp
@@ -77,6 +90,8 @@ $ gnuplot scripts/plot.gp
 The resulting graphs are called bench_result_time.png & bench_result_FLOPS.png and can be found in the data directory.
 
 ## Building and running using Docker
+(The Docker does not implement LIBXSMM)
+
 The docker container can be built using:
 ```
 $ sudo docker build -t dd2358-assignment-3:latest .
